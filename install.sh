@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -8,8 +8,8 @@ mkdir -p ~/.config/niri
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/noctalia
 
-cp -r "$DOTFILES_DIR/niri/" ~/.config/
-cp -r "$DOTFILES_DIR/alacritty/" ~/.config/
-cp -r "$DOTFILES_DIR/noctalia" ~/.config/
+rm -rf ~/.config/niri && cp -r "$DOTFILES_DIR/niri/" ~/.config/
+rm -rf ~/.config/alacritty && cp -r "$DOTFILES_DIR/alacritty/" ~/.config/
+rm -rf ~/.config/noctalia && cp -r "$DOTFILES_DIR/noctalia" ~/.config/
 
 echo "Done!"
