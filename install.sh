@@ -2,14 +2,26 @@
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "Installing dotfiles..."
+echo "Installing dotfiles from $DOTFILES_DIR..."
 
-mkdir -p ~/.config/niri
-mkdir -p ~/.config/alacritty
-mkdir -p ~/.config/noctalia
+link() {
+    local src="$1"
+    local dst="$2"
+    if [ -e "$dst" ] && [ ! -L "$dst" ]; then
+        mv "$dst" "${dst}.bak.$(date +%Y%m%d_%H%M%S)"
+        echo "  backed up: ${dst}.bak.*"
+    fi
+    rm -rf "$dst"
+    ln -sf "$src" "$dst"
+    echo "  linked: $dst"
+}
 
-rm -rf ~/.config/niri && cp -r "$DOTFILES_DIR/niri/" ~/.config/
-rm -rf ~/.config/alacritty && cp -r "$DOTFILES_DIR/alacritty/" ~/.config/
-rm -rf ~/.config/noctalia && cp -r "$DOTFILES_DIR/noctalia" ~/.config/
+mkdir -p ~/.config
 
-echo "Done!"
+link "$DOTFILES_DIR/niri"         ~/.config/niri
+link "$DOTFILES_DIR/alacritty"    ~/.config/alacritty
+link "$DOTFILES_DIR/noctalia"     ~/.config/noctalia
+link "$DOTFILES_DIR/spotify_player" ~/.config/spotify-player
+link "$DOTFILES_DIR/ghostty"      ~/.config/ghostty
+
+echo "Done! Run ./install.sh again if you add new config directories."
