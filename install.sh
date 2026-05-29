@@ -23,5 +23,6 @@ link "$DOTFILES_DIR/alacritty"    ~/.config/alacritty
 link "$DOTFILES_DIR/noctalia"     ~/.config/noctalia
 link "$DOTFILES_DIR/spotify_player" ~/.config/spotify-player
 link "$DOTFILES_DIR/ghostty"      ~/.config/ghostty
+link "$DOTFILES_DIR/helix"        ~/.config/helix
 
 echo "Done! Run ./install.sh again if you add new config directories."
