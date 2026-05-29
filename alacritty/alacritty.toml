@@ -6,7 +6,6 @@ WINIT_X11_SCALE_FACTOR = "1"
 dynamic_padding = true
 decorations = "full"
 title = "Alacritty@CachyOS"
-opacity = 0.8
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
@@ -25,28 +24,32 @@ multiplier = 3
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "0x2E3440"
-foreground = "0xD8DEE9"
+background = '#1c2023'
+foreground = '#c7ccd1'
+
+[colors.cursor]
+text = '#1c2023'
+cursor = '#c7ccd1'
 
 [colors.normal]
-black = "0x3B4252"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x88C0D0"
-white = "0xE5E9F0"
+black   = '#1c2023'
+red     = '#c7ae95'
+green   = '#95c7ae'
+yellow  = '#aec795'
+blue    = '#ae95c7'
+magenta = '#c795ae'
+cyan    = '#95aec7'
+white   = '#c7ccd1'
 
 [colors.bright]
-black = "0x4C566A"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x8FBCBB"
-white = "0xECEFF4"
+black   = '#747c84'
+red     = '#c7ae95'
+green   = '#95c7ae'
+yellow  = '#aec795'
+blue    = '#ae95c7'
+magenta = '#c795ae'
+cyan    = '#95aec7'
+white   = '#f3f4f5'
 
 [font]
 size = 12
@@ -160,5 +163,6 @@ mods = "Control"
 action = "ResetFontSize"
 
 [general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
 live_config_reload = true
 working_directory = "None"
