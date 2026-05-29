@@ -5,6 +5,7 @@
 
     window-rule {
         match app-id="Alacritty"
+        match app-id="com.mitchellh.ghostty"
 
         opacity 0.8
 
